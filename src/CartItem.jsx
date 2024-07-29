@@ -9,14 +9,20 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- 
+    let totalAmount = 0;
+    for(let i = 0; i < plantsArray.length; i++) {
+        totalAmount += plantsArray[i].quantity * plantsArray[i].cost;
+    }
+    return totalAmount;
   };
 
   const handleContinueShopping = (e) => {
-   
+    onContinueShopping();
   };
 
-
+  const handleCheckoutShopping = (e) => {
+    alert('Functionality to be added for future reference');
+  };
 
   const handleIncrement = (item) => {
   };
